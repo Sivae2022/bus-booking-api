@@ -17,6 +17,7 @@ Deployment: Docker, AWS EC2
 bash
 Copy
 Edit
+DOCKER LINK-http://localhost:3000/
 git clone https://github.com/Sivae2022/bus-booking-api.git
 cd bus-booking-api
 2️⃣ Install Dependencies
@@ -30,7 +31,7 @@ Create a .env file and add:
 env
 Copy
 Edit
-PORT=5000
+PORT=3000
 MONGO_URI=your_mongodb_connection_string
 JWT_SECRET=your_secret_key
 4️⃣ Run the Server
@@ -38,7 +39,7 @@ bash
 Copy
 Edit
 npm start
-The server will start at http://localhost:5000
+The server will start at http://localhost:3000
 
 🐳 Run with Docker
 bash
