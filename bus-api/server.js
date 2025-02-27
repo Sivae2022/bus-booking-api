@@ -1,35 +1,39 @@
-
 // require("dotenv").config();
-// const express = require("express")
-// const app = express()
+// const express = require("express");
+// const cors = require("cors");
+// const connectDb = require("./config/db");
 
-// const userRoutes = require('./Routes/userRoutes')
-// const busRoutes = require('./Routes/busRoutes')
-// const routes = require('./Routes/routes')
-// const bookRoutes = require('./Routes/bookingRoutes')
+// const userRoutes = require('./Routes/userRoutes');
+// const busRoutes = require('./Routes/busRoutes');
+// const routes = require('./Routes/routes');
+// const bookRoutes = require('./Routes/bookingRoutes');
 
-// const connectDb = require("./config/db")
-// const cors = require("cors")
+// const app = express();
 
-// const PORT = process.env.PORT || 3000
-// connectDb()
-// app.use(express.json())
-// app.use(cors())
+// // Connect to MongoDB
+// connectDb();
 
-// app.use(express.static("public"))
-// // app.get("/",(req, res) =>{
-// //     res.json({message:"hello world"})
-// // })
+// // Middleware
+// app.use(express.json());
+// app.use(cors());
+// app.use(express.static("public"));
 
-// app.use('/user',userRoutes)
-// app.use('/bus',busRoutes);
-// app.use('/routes',routes)
-// app.use('/book',bookRoutes)
+// // Routes
+// app.use('/user', userRoutes);
+// app.use('/bus', busRoutes);
+// app.use('/routes', routes);
+// app.use('/book', bookRoutes);
 
-// app.listen(PORT,(err)=>{
-//     console.log(`app is listening on ${PORT}`)
-// })
+// // Default route
+// app.get("/", (req, res) => {
+//     res.json({ message: "Welcome to the Bus Booking API!" });
+// });
 
+// // Start server with correct port
+// const PORT = process.env.PORT || 5000;
+// app.listen(PORT, '0.0.0.0', () => {
+//     console.log(`🚀 Server is running on port ${PORT}`);
+// });
 require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
@@ -61,8 +65,8 @@ app.get("/", (req, res) => {
     res.json({ message: "Welcome to the Bus Booking API!" });
 });
 
-// Start server
+// Start server with correct port
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
+app.listen(PORT, '0.0.0.0', () => {
+    console.log(`🚀 Server is running on port ${PORT}`);
 });
